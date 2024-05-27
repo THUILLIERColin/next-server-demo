@@ -1,3 +1,7 @@
-FROM python
+FROM python:3-alpine
 
-# blablabla
+COPY . .
+
+RUN pip install flask
+
+CMD ["python", "app.py"]
