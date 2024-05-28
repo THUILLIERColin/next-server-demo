@@ -29,6 +29,7 @@ jobs:
         uses: google-github-actions/deploy-cloudrun@v2
         with:
           service: ${{ steps.actor.outputs.lower }}-${{ env.app }}
+          flags: --port=8065 --memory=1Gi
           image: mattermost/mattermost-team-edition
           env_vars: |
             MM_SQLSETTINGS_DATASOURCE=postgres://bohan_thuillier:bohan_thuillier@35.239.186.51/bohan_thuillier?sslmode=disable&connect_timeout=10
